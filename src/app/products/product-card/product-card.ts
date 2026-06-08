@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-card',
@@ -11,4 +12,8 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })
-export class ProductCard {}
+export class ProductCard {
+
+  readonly product = input<Product>();
+
+}
