@@ -14,6 +14,7 @@ import { Product } from '../product';
 })
 export class ProductCard {
 
-  readonly product = input<Product>();
+  readonly product = input.required<Product>();
+  readonly addButtonLabel = input('Add to Cart');
 
 }

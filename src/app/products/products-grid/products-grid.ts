@@ -15,21 +15,22 @@ export class ProductsGrid {
     {
       id: 1,
       name: 'Premium Wireless Headphones',
-      description: 'High-Quality wireless headphones with noise cancelallation and premium sound.',
+      description: 'High-Quality wireless headphones with noise cancelallation and premium sound',
       price: 199.99,
       originalPrice: 249.99
     },
     {
       id: 2,
       name: 'Smart Fitness Watch',
-      description: 'Track your fitness goals with this advanced smartwatch featuring heart rate.',
+      description: 'Track your fitness goals with this advanced smartwatch featuring heart rate',
       price: 299.99
     },
     {
       id: 3,
       name: 'Portable Bluetooth Speaker',
-      description: 'Compact speaker with powerfull bass and 12-hour battery life.',
-      price: 79.99
+      description: 'Compact speaker with powerfull bass and 12-hour battery life',
+      price: 79.99,
+      originalPrice: 99.99
     }
   ]);
 
