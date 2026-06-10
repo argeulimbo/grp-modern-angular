@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../product';
 import { MatIconModule } from "@angular/material/icon";
@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CartService } from '../../cart/cart-service';
 
 @Component({
   selector: 'app-products-grid',
@@ -46,6 +47,8 @@ export class ProductsGrid {
     }
   ]);
 
+  private readonly cartService = inject(CartService);
+
   protected readonly filteredProducts = computed(() => {
     const term = this.searchTerm().toLocaleLowerCase().trim();
     if (!term) return this.products();
@@ -55,6 +58,10 @@ export class ProductsGrid {
       product.description.toLocaleLowerCase().includes(term)
     );
   });
+
+  protected onAddToCard(product: Product): void {
+    this.cartService.addToCart(product);
+  }
 
   protected clearSearch(): void {
     this.searchTerm.set('');
